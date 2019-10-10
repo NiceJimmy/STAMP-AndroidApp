@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shadow="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailPage.DetailActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="312dp"
+                    android:orientation="horizontal">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewpager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                    <ImageView
+                        android:id="@+id/left_nav"
+                        android:layout_width="11dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center_vertical|left"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/left_arrow" />
+
+                    <ImageView
+                        android:id="@+id/right_nav"
+                        android:layout_width="11dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center_vertical|right"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/right_arrow" />
+
+                </FrameLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13.7dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="13dp">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ENCORE BOA 카페"
+                            android:textColor="#4f4f4f"
+                            android:textSize="15sp" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal">
+
+
+
+
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="40dp"
+                                android:layout_height="32.3dp"
+                                android:layout_gravity="center"
+                                app:cardCornerRadius="5dp"
+                                android:layout_margin="3dp"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/map"
+                                    android:layout_width="20.7dp"
+                                    android:layout_height="20.7dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/map" />
+
+                            </android.support.v7.widget.CardView>
+
+
+
+                            <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                                android:id="@+id/address"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="11.3dp"
+                                android:text="경기도 수원시 영통구 매영로 366 하이앤드 플라자 1층"
+                                android:textColor="#4f4f4f"
+                                android:layout_marginTop="3dp"
+                                android:textSize="12.3sp" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <org.techtown.sttampproject.customfonts.MyTextView_Opensans_SemiBold
+                        android:layout_width="43dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/curve_green_rectangle"
+                        android:text="4.5"
+                        android:gravity="center"
+                        android:textColor="#fefdfd"
+                        android:textSize="15sp" />
+
+
+                </LinearLayout>
+
+
+                <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="고객 후기"
+                    android:textColor="#3dabe8"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="18.3dp"
+                    android:orientation="horizontal">
+
+                    <org.techtown.sttampproject.customfonts.MyTextView_Opensans_SemiBold
+                        android:layout_width="43dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/curve_green_rectangle"
+                        android:text="4.5"
+                        android:gravity="center"
+                        android:textColor="#fefdfd"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="7dp"
+                        android:orientation="vertical">
+
+                        <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="훌륭해요~"
+                            android:textColor="#93cc1a"
+                            android:textSize="10.7sp" />
+
+                        <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="392 Reviews"
+                            android:textColor="#93cc1a"
+                            android:textSize="10.7sp" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="226dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="179dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="후기 등록하기" />
+
+                </LinearLayout>
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/review_recycleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="21dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+
+                <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="스탬프 목록"
+                    android:textColor="#3dabe8"
+                    android:textSize="15sp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/stamp_recycleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="21dp"
+                    android:layout_marginTop="18.3dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Bold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="32dp"
+                    android:text="할인 품목"
+                    android:textColor="#3dabe8"
+                    android:textSize="15sp" />
+
+
+                <LinearLayout
+                    android:layout_width="374dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="18.3dp"
+                    android:orientation="vertical">
+
+
+                    <android.support.v7.widget.RecyclerView
+
+                        android:id="@+id/menu_recyclerview2"
+                        android:layout_width="328dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18.3dp"
+                        android:clipToPadding="false"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="21dp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+
+
+        <org.techtown.sttampproject.customfonts.MyTextView_PTSans_Bold
+            android:id="@+id/save_shop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:lineSpacingExtra="-9.3sp"
+            android:paddingTop="19.3dp"
+            android:paddingBottom="19.3dp"
+            android:text="찜하기"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:textSize="13.3sp"
+            android:layout_weight="1"
+            android:layout_marginRight="1dp"
+            />
+
+
+    <org.techtown.sttampproject.customfonts.MyTextView_PTSans_Bold
+        android:id="@+id/use_stamp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:lineSpacingExtra="-9.3sp"
+        android:paddingTop="19.3dp"
+        android:paddingBottom="19.3dp"
+        android:text="Stamp 사용하기"
+        android:textAllCaps="true"
+        android:textColor="#ffffff"
+        android:textSize="13.3sp"
+        android:layout_weight="1"
+        />
+
+    </LinearLayout>
+</RelativeLayout>

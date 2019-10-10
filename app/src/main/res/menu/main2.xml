@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_login"
+        android:orderInCategory="100"
+        android:title="로그인"
+        />
+
+    <item
+        android:id="@+id/menu_logout"
+        android:orderInCategory="100"
+        android:title="로그아웃"
+        />
+
+
+</menu>

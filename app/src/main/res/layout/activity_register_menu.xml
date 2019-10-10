@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="bottom|end"
+    android:layout_weight="4"
+    >
+
+
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_weight="0.5"
+        android:text="수정" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/menu_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="453dp"
+        android:layout_weight="3.5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+
+        >
+
+        <Button
+            android:id="@+id/menu_insert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="메뉴 등록"
+            android:background="@color/colorAccent"
+            android:textColor="@color/cast_libraries_material_featurehighlight_text_header_color"
+            android:layout_marginRight="1dp"
+            />
+
+        <Button
+            android:id="@+id/menu_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NEXT"
+            android:background="@color/colorAccent"
+            android:textColor="@color/cast_libraries_material_featurehighlight_text_header_color"
+            android:layout_marginLeft="1dp"
+            />
+    </LinearLayout>
+</LinearLayout>

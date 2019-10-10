@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="196.7dp"
+    android:layout_height="130dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/shadow"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.3dp"
+        android:layout_marginLeft="9.3dp"
+        android:layout_marginRight="7dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Bold
+                android:id="@+id/review_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10.7sp"
+                android:textColor="#4f4f4f"
+                android:text="Aaryan Rathod"
+                />
+            <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                android:id="@+id/review_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10.7sp"
+                android:textColor="#4f4f4f"
+                android:text="22 Oct"
+                />
+
+        </LinearLayout>
+
+        <org.techtown.sttampproject.customfonts.MyTextView_Opensans_SemiBold
+            android:id="@+id/review_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_curve_green_rectangle"
+            android:paddingLeft="6.3dp"
+            android:paddingTop="5.7dp"
+            android:paddingRight="6.3dp"
+            android:paddingBottom="5.7dp"
+            android:text="5.0"
+            android:textColor="#93cc1a"
+            android:textSize="8.2sp" />
+
+    </LinearLayout>
+
+    <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+        android:id="@+id/review_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10.7sp"
+        android:textColor="#4f4f4f"
+        android:lineSpacingExtra="4.7sp"
+        android:layout_marginLeft="9.3dp"
+        android:layout_marginTop="18.3dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/review"
+        />
+
+
+</LinearLayout>

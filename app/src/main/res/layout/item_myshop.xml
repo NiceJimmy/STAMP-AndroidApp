@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginRight="13dp"
+    app:cardElevation="3dp"
+    android:layout_marginTop="13dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="7dp">
+
+
+    <LinearLayout
+        android:layout_width="306dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="351dp"
+            android:layout_height="126dp"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/shop_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/green_rectangle"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="13dp">
+
+
+                    <TextView
+                        android:id="@+id/shop_name2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Hotel Surya Palace"
+                        android:textColor="#4f4f4f"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="13dp">
+
+
+                    <TextView
+                        android:id="@+id/shop_address2"
+                        android:layout_width="243dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_weight="1"
+                        android:text="Alkapuri, Vadodara"
+                        android:textColor="#aeaeae"
+                        android:textSize="12.5sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="51dp"
+                android:layout_height="match_parent"
+                android:text="삭제" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

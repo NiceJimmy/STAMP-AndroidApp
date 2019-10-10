@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.techtown.sttampproject">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front.autofocus"
+        android:required="false" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:hardwareAccelerated="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyDQVigAKKM3OHBjGFFQtF4V8klVDie1YSc" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RegisterProcess.RegisterActivity" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="3c1021b1febc097b7397d4b14d648cf0" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDQVigAKKM3OHBjGFFQtF4V8klVDie1YSc" />
+
+        <activity android:name=".ShareActivity.ShareActivity" />
+        <activity android:name=".DaumWebViewActivity" />
+        <activity android:name=".SharingGridView2.SharingPictures2" />
+        <activity android:name=".DetailPage.DetailActivity" />
+        <activity android:name=".MyPage.MypageActivity" />
+        <activity android:name=".StampProcess.RegisterStamp" />
+        <activity android:name=".MenuProcess.RegisterMenu" />
+        <activity android:name=".ShareActivity.ShareActivity2" />
+        <activity android:name=".Upload_Process.UploadActivity" />
+        <activity android:name=".DetailPage.FullScreenImage" />
+        <activity android:name=".Edit_Process.EditActivity" />
+        <activity android:name=".Edit_Process.basic_info_update.BasicInfoUpdate" />
+        <activity android:name=".Edit_Process.address_info_update.AddressInfoUpdate" />
+        <activity android:name=".Edit_Process.menu_info_update.MenuInfoUpdate" />
+        <activity android:name=".Edit_Process.pic_info_update.PicInfoUpdate" />
+        <activity android:name=".Edit_Process.stamp_info_update.StampInfoUpdate" />
+        <activity android:name=".MyShop.MyShopActivity" />
+        <activity android:name=".MyStamp.MyStampActivity" />
+        <activity android:name=".MapActivity"></activity>
+    </application>
+
+</manifest>

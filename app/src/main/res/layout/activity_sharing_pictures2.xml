@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="bottom|end"
+    android:layout_weight="4"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_weight="0.5"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="순서 저장"
+            android:visibility="gone"
+            />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="267dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="center|right|end"
+            android:text="수정"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_main_list"
+        android:layout_width="match_parent"
+        android:layout_height="453dp"
+        android:layout_weight="3.5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+
+        >
+
+        <Button
+            android:id="@+id/button_main_insert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:text="사진 등록"
+            android:visibility="visible"
+            android:textColor="@color/cast_libraries_material_featurehighlight_text_header_color" />
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:textColor="@color/cast_libraries_material_featurehighlight_text_header_color"
+            android:text="NEXT"
+            android:layout_marginLeft="1dp"
+            android:visibility="visible"
+            />
+    </LinearLayout>
+</LinearLayout>

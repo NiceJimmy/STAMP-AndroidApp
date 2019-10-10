@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+
+
+    >
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_gravity="center"
+        app:cardElevation="10dp"
+        android:layout_marginTop="9dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="7dp"
+        >
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="243dp"
+            android:layout_height="68dp"
+            android:layout_gravity="start|center"
+            android:gravity="start|center"
+            android:text="1. 매장 기본정보"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end|center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/basic_button"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_gravity="center|right"
+                android:text="등록완료"
+
+                />
+
+            <Button
+                android:id="@+id/basic_button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="수정하기" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_gravity="center"
+        app:cardElevation="10dp"
+        android:layout_marginTop="9dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="7dp"
+        >
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="243dp"
+            android:layout_height="68dp"
+            android:layout_gravity="start|center"
+            android:gravity="start|center"
+            android:text="2. 매장주소 등록"
+            android:textSize="24sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end|center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/address_button"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_gravity="center|right"
+                android:text="등록완료"
+                android:visibility="gone"
+
+                />
+
+            <Button
+                android:id="@+id/address_button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="수정하기"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_gravity="center"
+        app:cardElevation="10dp"
+        android:layout_marginTop="9dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="7dp"
+        >
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="243dp"
+            android:layout_height="68dp"
+            android:layout_gravity="start|center"
+            android:gravity="start|center"
+            android:text="3. 매장사진 등록"
+            android:textSize="24sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end|center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pic_button"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_gravity="center|right"
+                android:text="등록완료"
+                android:visibility="gone"
+
+                />
+
+            <Button
+                android:id="@+id/pic_button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="수정하기"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_gravity="center"
+        app:cardElevation="10dp"
+        android:layout_marginTop="9dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="7dp"
+        >
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="243dp"
+            android:layout_height="68dp"
+            android:layout_gravity="start|center"
+            android:gravity="start|center"
+            android:text="4. 할인메뉴 등록"
+            android:textSize="24sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end|center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/menu_button"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_gravity="center|right"
+                android:text="등록완료"
+                android:visibility="gone"
+
+                />
+
+            <Button
+                android:id="@+id/menu_button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="수정하기"
+                android:visibility="gone"
+
+                />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_gravity="center"
+        app:cardElevation="10dp"
+        android:layout_marginTop="9dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="7dp"
+        >
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="243dp"
+            android:layout_height="68dp"
+            android:layout_gravity="start|center"
+            android:gravity="start|center"
+            android:text="5. 스탬프 등록"
+            android:textSize="24sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end|center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/stamp_button"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_gravity="center|right"
+                android:text="등록완료"
+                android:visibility="gone"
+
+                />
+
+            <Button
+                android:id="@+id/stamp_button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="수정하기"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
