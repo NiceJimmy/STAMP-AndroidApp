@@ -37,7 +37,6 @@
         android:name="com.google.android.geo.API_KEY"
         android:value="AIzaSyDQVigAKKM3OHBjGFFQtF4V8klVDie1YSc" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -51,11 +50,7 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".RegisterProcess.RegisterActivity" />
 
@@ -84,7 +79,15 @@
         <activity android:name=".Edit_Process.stamp_info_update.StampInfoUpdate" />
         <activity android:name=".MyShop.MyShopActivity" />
         <activity android:name=".MyStamp.MyStampActivity" />
-        <activity android:name=".MapActivity"></activity>
+        <activity android:name=".MapActivity" />
+        <activity android:name=".IntroActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

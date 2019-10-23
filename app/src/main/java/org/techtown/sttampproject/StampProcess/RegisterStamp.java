@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -73,6 +74,9 @@ public class RegisterStamp extends AppCompatActivity {
     String Tell2;
     String shorder;
 
+    GridLayoutManager layoutManager;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,8 +89,12 @@ public class RegisterStamp extends AppCompatActivity {
         SharedPreferences sf2 = getSharedPreferences("ShareActivity",MODE_PRIVATE);
         shorder = sf2.getString("shorder","");
 
+
+        layoutManager = new GridLayoutManager(getApplicationContext(), 3);
+
+
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_main_list2);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(layoutManager);
         mArrayList = new ArrayList<>();
 
 
@@ -153,7 +161,7 @@ public class RegisterStamp extends AppCompatActivity {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int hour, int min) {
 
-                        String msg = String.format("%d:%d", hour, min);
+                        String msg = String.format("%02d:%02d", hour, min);
                         Start.setText(msg);
                     }
                 }, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true);  //마지막 boolean 값은 시간을 24시간으로 보일지 아닐지
@@ -169,7 +177,7 @@ public class RegisterStamp extends AppCompatActivity {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int hour, int min) {
 
-                        String msg = String.format("%d:%d", hour, min);
+                        String msg = String.format("%02d:%02d", hour, min);
                         Finish.setText(msg);
                     }
                 }, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true);  //마지막 boolean 값은 시간을 24시간으로 보일지 아닐지

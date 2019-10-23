@@ -55,6 +55,7 @@
                 </FrameLayout>
 
 
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -71,6 +72,7 @@
                         android:orientation="vertical">
 
                         <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                            android:id="@+id/proName2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="ENCORE BOA 카페"
@@ -132,6 +134,136 @@
 
 
                 </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="매장 소개"
+                    android:textColor="#3dabe8"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="18.3dp"
+                    android:orientation="vertical">
+
+                    <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                        android:id="@+id/about_shop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11.3dp"
+                        android:hint="항상 정성과 사랑을 가득담아 최고의 서비스를 제공합니다."
+                        android:textColor="#4f4f4f"
+                        android:layout_marginTop="3dp"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="18.3dp"
+                        >
+                        <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                            android:id="@+id/tel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="11.3dp"
+                            android:text="TEL : "
+                            android:textColor="#4f4f4f"
+                            android:layout_marginTop="3dp"
+                            android:textSize="14sp" />
+
+                        <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                            android:id="@+id/tel_con"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="11.3dp"
+                            android:hint="00000000000"
+                            android:textColor="#4f4f4f"
+                            android:layout_marginTop="3dp"
+                            android:textSize="14sp" />
+                        <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                            android:id="@+id/tel2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="11.3dp"
+                            android:text="TEL2 : "
+                            android:textColor="#4f4f4f"
+                            android:layout_marginTop="3dp"
+                            android:textSize="14sp" />
+
+                        <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
+                            android:id="@+id/tel_con2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="11.3dp"
+                            android:hint="00000000000"
+                            android:textColor="#4f4f4f"
+                            android:layout_marginTop="3dp"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                 <org.techtown.sttampproject.customfonts.MyTextView_OpenSans_Regular
@@ -243,26 +375,70 @@
 
 
                 <LinearLayout
-                    android:layout_width="374dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="18.3dp"
+                    android:layout_marginTop="5dp"
                     android:orientation="vertical">
 
 
                     <android.support.v7.widget.RecyclerView
 
                         android:id="@+id/menu_recyclerview2"
-                        android:layout_width="328dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="18.3dp"
+                        android:layout_marginTop="5dp"
                         android:clipToPadding="false"
-                        android:paddingLeft="15dp"
-                        android:paddingTop="21dp" />
+
+                         />
 
 
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
+
+
+                    <org.techtown.sttampproject.customfonts.MyTextView_PTSans_Bold
+                        android:id="@+id/save_shop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/colorAccent"
+                        android:gravity="center"
+                        android:lineSpacingExtra="-9.3sp"
+                        android:paddingTop="19.3dp"
+                        android:paddingBottom="19.3dp"
+                        android:text="찜하기"
+                        android:textAllCaps="true"
+                        android:textColor="#ffffff"
+                        android:textSize="13.3sp"
+                        android:layout_weight="1"
+                        android:layout_marginRight="1dp"
+                        />
+
+
+                    <org.techtown.sttampproject.customfonts.MyTextView_PTSans_Bold
+                        android:id="@+id/use_stamp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/colorAccent"
+                        android:gravity="center"
+                        android:lineSpacingExtra="-9.3sp"
+                        android:paddingTop="19.3dp"
+                        android:paddingBottom="19.3dp"
+                        android:text="Stamp 사용하기"
+                        android:textAllCaps="true"
+                        android:textColor="#ffffff"
+                        android:textSize="13.3sp"
+                        android:layout_weight="1"
+                        />
+
+                </LinearLayout>
             </LinearLayout>
 
         </ScrollView>
@@ -270,50 +446,5 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:weightSum="2">
 
-
-
-        <org.techtown.sttampproject.customfonts.MyTextView_PTSans_Bold
-            android:id="@+id/save_shop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@color/colorAccent"
-            android:gravity="center"
-            android:lineSpacingExtra="-9.3sp"
-            android:paddingTop="19.3dp"
-            android:paddingBottom="19.3dp"
-            android:text="찜하기"
-            android:textAllCaps="true"
-            android:textColor="#ffffff"
-            android:textSize="13.3sp"
-            android:layout_weight="1"
-            android:layout_marginRight="1dp"
-            />
-
-
-    <org.techtown.sttampproject.customfonts.MyTextView_PTSans_Bold
-        android:id="@+id/use_stamp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorAccent"
-        android:gravity="center"
-        android:lineSpacingExtra="-9.3sp"
-        android:paddingTop="19.3dp"
-        android:paddingBottom="19.3dp"
-        android:text="Stamp 사용하기"
-        android:textAllCaps="true"
-        android:textColor="#ffffff"
-        android:textSize="13.3sp"
-        android:layout_weight="1"
-        />
-
-    </LinearLayout>
 </RelativeLayout>

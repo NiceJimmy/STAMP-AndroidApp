@@ -11,7 +11,7 @@
 
     android:orientation="vertical"
 
-    tools:context="org.techtown.myapp10.DaumWebViewActivity">
+    tools:context="org.techtown.sttampproject.DaumWebViewActivity">
 
     <TextView
 

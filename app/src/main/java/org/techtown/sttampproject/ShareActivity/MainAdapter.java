@@ -57,6 +57,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
                     String proName = mList.get(position).getProName();
                     String address = mList.get(position).getAddress();
                     String address2 = mList.get(position).getAddress2();
+                    String about_shop = mList.get(position).getDescription();
+                    String tel_con = mList.get(position).getStore_tel1();
+                    String tel_con2 = mList.get(position).getStore_tel2();
 
 
 
@@ -66,6 +69,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
                     intent.putExtra("proName",proName);
                     intent.putExtra("address",address);
                     intent.putExtra("address2",address2);
+                    intent.putExtra("about_shop",about_shop);
+                    intent.putExtra("tel_con",tel_con);
+                    intent.putExtra("tel_con2",tel_con2);
 
 
                     view.getContext().startActivity(intent);
@@ -112,7 +118,7 @@ String path = "http://ec2-13-209-15-23.ap-northeast-2.compute.amazonaws.com/";
         Glide.with(customViewHolder.itemView.getContext())
                 .load(path+mList.get(position).getPath())
                 .apply(new RequestOptions().fitCenter().centerCrop())
-                .transition(new DrawableTransitionOptions().crossFade())
+//                .transition(new DrawableTransitionOptions().crossFade())
                 .into(customViewHolder.mainImg);
 
         Log.d("dataval","타이틀데이터 : " + mList.get(position).getAddress2());

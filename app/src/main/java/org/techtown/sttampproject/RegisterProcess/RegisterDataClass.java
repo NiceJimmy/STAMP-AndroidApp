@@ -9,9 +9,6 @@ public class RegisterDataClass {
     @SerializedName("userPassword")
     private String userPassword;
 
-    @SerializedName("userGender")
-    private String userGender;
-
     @SerializedName("userEmail")
     private String userEmail;
 
@@ -20,6 +17,7 @@ public class RegisterDataClass {
 
     @SerializedName("response")
     private String Response;
+
 
     public String getUserID() {
         return userID;
@@ -35,14 +33,6 @@ public class RegisterDataClass {
 
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
-    }
-
-    public String getUserGender() {
-        return userGender;
-    }
-
-    public void setUserGender(String userGender) {
-        this.userGender = userGender;
     }
 
     public String getUserEmail() {

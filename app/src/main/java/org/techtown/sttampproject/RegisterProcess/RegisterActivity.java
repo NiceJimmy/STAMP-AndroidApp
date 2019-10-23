@@ -46,13 +46,7 @@ import retrofit2.Callback;
 public class RegisterActivity extends AppCompatActivity {
 
     private static final int GALLERY_REQUEST_CODE = 0;
-    private ArrayAdapter adapter;
-    private Spinner spinner;
-    private String userID;
-    private String userPassword;
-    private String userGender;
-    private String userMajor;
-    private String userEmail;
+
     private AlertDialog dialog;
     private boolean validate = false;
     Uri uri;
@@ -72,18 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText emailText = (EditText)findViewById(R.id.Email);
 
 
-        RadioGroup genderGroup = (RadioGroup)findViewById(R.id.genderGroup);
-        int genderGroupID = genderGroup.getCheckedRadioButtonId();
-        userGender = ((RadioButton)findViewById(genderGroupID)).getText().toString();//초기화 값을 지정해줌
 
-        //라디오버튼이 눌리면 값을 바꿔주는 부분
-        genderGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                RadioButton genderButton = (RadioButton)findViewById(i);
-                userGender = genderButton.getText().toString();
-            }
-        });
 
 
 Button button2 = (Button) findViewById(R.id.button2);
@@ -246,7 +229,7 @@ button2.setOnClickListener(new View.OnClickListener() {
             profileimg = convertToString();
 
                 SharingApiInterface apiInterface2 = SharingApiClient.getApiClient().create(SharingApiInterface.class);
-                Call<RegisterDataClass> call2 = apiInterface2.RegisterProcess(userID,userPassword,userGender,userEmail,profileimg);
+                Call<RegisterDataClass> call2 = apiInterface2.RegisterProcess(userID,userPassword,userEmail,profileimg);
                call2.enqueue(new Callback<RegisterDataClass>() {
                    @Override
                    public void onResponse(Call<RegisterDataClass> call, retrofit2.Response<RegisterDataClass> response) {
@@ -359,7 +342,7 @@ button2.setOnClickListener(new View.OnClickListener() {
     {
         UriToBitmap();
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bm.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
+        bm.compress(Bitmap.CompressFormat.JPEG,50,byteArrayOutputStream);
         byte[] imgByte = byteArrayOutputStream.toByteArray();
         return Base64.encodeToString(imgByte,Base64.DEFAULT);
     }

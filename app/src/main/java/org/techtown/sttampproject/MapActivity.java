@@ -2,6 +2,7 @@ package org.techtown.sttampproject;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -16,6 +17,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -73,9 +75,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     SupportMapFragment mapFragment;
 
-//    double lat2;
+    //    double lat2;
 //    double lon2;
-     Marker m1;
+    Marker m1;
 
     boolean bLog = false;
     Uri uri;
@@ -85,6 +87,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     String address_1;
     String address_2;
+    String pro_name;
 
     float lat;
     float lon;
@@ -109,6 +112,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         Intent intent = getIntent();
         address_1 = intent.getStringExtra("address_1");
         address_2 = intent.getStringExtra("address_2");
+        pro_name = intent.getStringExtra("proName");
 
         get_XY();
 
@@ -194,7 +198,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
 
                 .position(new LatLng(lat, lon))
-                .title("마커"); // 타이틀.
+                .snippet("Tmap Navi")
+                .title(pro_name); // 타이틀.
+
 
 
 
@@ -202,28 +208,38 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                 new LatLng(lat,lon), DEFAULT_ZOOM));
 
+
+        GoogleMap.OnInfoWindowClickListener infoWindowClickListener = new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                TMapTapi tMapTapi = new TMapTapi(MapActivity.this);
+
+                HashMap pathInfo = new HashMap();
+                pathInfo.put("rGoName", address_1 + " " + address_2);
+                pathInfo.put("rGoX", String.valueOf(lon));
+                pathInfo.put("rGoY", String.valueOf(lat));
+
+                pathInfo.put("rStName", "현위치");
+                pathInfo.put("rStX", String.valueOf(current_lon));
+                pathInfo.put("rStY", String.valueOf(current_lat));
+
+
+                tMapTapi.invokeRoute(pathInfo);
+
+
+                tMapTapi.invokeNavigate(address_1 + " " + address_2, lon, lat, 0, true);
+            }
+        };
+        mMap.setOnInfoWindowClickListener(infoWindowClickListener);
+
+
+
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
                 if (marker.equals(m1)) {
 
-                    TMapTapi tMapTapi = new TMapTapi(MapActivity.this);
-
-                    HashMap pathInfo = new HashMap();
-                    pathInfo.put("rGoName", address_1+" "+address_2);
-                    pathInfo.put("rGoX", String.valueOf(lon));
-                    pathInfo.put("rGoY", String.valueOf(lat));
-
-                    pathInfo.put("rStName", "출발지");
-                    pathInfo.put("rStX", String.valueOf(current_lon));
-                    pathInfo.put("rStY", String.valueOf(current_lat));
-
-
-                    tMapTapi.invokeRoute(pathInfo);
-
-
-                    tMapTapi.invokeNavigate(address_1+" "+address_2, lon,lat, 0, true);
-
+//                   changeView(0);
                 }
 
                 return false;
@@ -464,4 +480,46 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     }
 
 
+
+    private void changeView(int index) {
+
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE); //  레이아웃 인플레이터 객체 생성
+
+        FrameLayout frame = (FrameLayout) findViewById(R.id.frame2); //프레임레이아웃 객체 생성
+
+        if (frame.getChildCount() > 0) {  //getChildCount ???
+            // FrameLayout에서 뷰 삭제.
+            frame.removeViewAt(0);
+        }
+
+        // XML에 작성된 레이아웃을 View 객체로 변환.
+        View view = null;
+
+        if (index == 0) {
+
+            view = inflater.inflate(R.layout.frame, frame, false);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+//                    Uri browserUri = Uri.parse("http://healpoint.co.kr/main/index.html");
+//                    Intent intent = new Intent(Intent.ACTION_VIEW,browserUri);
+//                    startActivity(intent);
+
+
+                }
+            });
+
+        }
+
+
+        if (view != null) {
+            frame.addView(view) ;
+        }
+    }
+
 }
+
+
+
+

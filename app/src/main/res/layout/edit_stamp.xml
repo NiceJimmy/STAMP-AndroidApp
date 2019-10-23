@@ -5,100 +5,94 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
+    android:gravity="center"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="105dp"
-        android:orientation="horizontal"></LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="77dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
 
         <Button
             android:id="@+id/insert_start"
-            android:layout_width="277dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="시작시간" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:textColor="@color/cast_libraries_material_featurehighlight_text_header_color"
+            android:text="start" />
 
         <TextView
             android:id="@+id/show_start"
-            android:layout_width="441dp"
-            android:layout_height="52dp"
-            android:layout_weight="1"
-            android:text="TextView"
-            android:textSize="30sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:hint="hh : mm"
+            android:textColor="@color/cast_expanded_controller_background_color"
+            android:textSize="20sp" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
 
 
         <Button
             android:id="@+id/insert_finish"
-            android:layout_width="277dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="종료시간" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:textColor="@color/cast_libraries_material_featurehighlight_text_header_color"
+            android:text="Finish" />
 
         <TextView
             android:id="@+id/show_finish"
-            android:layout_width="441dp"
-            android:layout_height="52dp"
-            android:layout_weight="1"
-            android:text="TextView"
-            android:textSize="30sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:hint="hh : mm"
+            android:textColor="@color/cast_expanded_controller_background_color"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="107dp"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/insert_rate"
-            android:layout_width="87dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+
             android:ems="10"
-            android:inputType="numberSigned"
-            android:textSize="36sp" />
+            android:inputType="number"
+            android:textColor="@color/cast_expanded_controller_background_color" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/textView26"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="% OFF"
-            android:textSize="36sp" />
+
+            android:textColor="@color/cast_expanded_controller_background_color"
+            android:textSize="20dp" />
     </LinearLayout>
 
-    <LinearLayout
+    <Button
+        android:id="@+id/button_register"
         android:layout_width="match_parent"
-        android:layout_height="28dp"
-        android:orientation="horizontal"></LinearLayout>
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background2"
+        android:textColor="@color/cast_libraries_material_featurehighlight_text_header_color"
+        android:text="upload" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button_register"
-                android:layout_width="318dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="등록하기" />
-        </LinearLayout>
-    </LinearLayout>
 </LinearLayout>

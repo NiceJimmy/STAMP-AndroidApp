@@ -34,7 +34,7 @@ public interface SharingApiInterface {
 
     @FormUrlEncoded
     @POST("UserRegister.php")
-    Call<RegisterDataClass> RegisterProcess(@Field("userID") String userID, @Field("userPassword") String userPassword, @Field("userGender") String userGender, @Field("userEmail") String userEmail, @Field("userProfile") String userProfile);
+    Call<RegisterDataClass> RegisterProcess(@Field("userID") String userID, @Field("userPassword") String userPassword, @Field("userEmail") String userEmail, @Field("userProfile") String userProfile);
     // shareactivity에서 정보를 전송해 디비에 인서트 하는 부분
 
 

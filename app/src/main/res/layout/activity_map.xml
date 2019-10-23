@@ -28,11 +28,26 @@
             android:layout_marginStart="0dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="0dp"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:context="com.example.currentplacedetailsonmap.MapsActivityCurrentPlace" />
 
+
+        <FrameLayout
+            android:id="@+id/frame2"
+            android:layout_width="242dp"
+            android:layout_height="162dp"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="50dp">
+
+        </FrameLayout>
     </FrameLayout>
 
 

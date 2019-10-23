@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
         mUserApi = retrofit2.create(UserApi2.class);
 
 
-        Button LoginButton = (Button)findViewById(R.id.Login);
+        Button LoginButton = (Button)findViewById(R.id.login_btn);
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,7 +126,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        TextView register = (TextView) findViewById(R.id.Registration);
+        TextView register = (TextView) findViewById(R.id.register_btn);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

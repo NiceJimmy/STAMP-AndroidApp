@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.support.v7.view.menu.MenuAdapter;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +29,7 @@ import org.techtown.sttampproject.SharingGridView2.retrofit3.ApiClient2;
 import org.techtown.sttampproject.SharingGridView2.retrofit3.ApiInterface2;
 import org.techtown.sttampproject.StampProcess.RegisterStamp;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -107,6 +110,34 @@ public class RegisterMenu extends AppCompatActivity {
         final AlertDialog dialog = builder.create();
 
 
+//        DecimalFormat dc = new DecimalFormat("###,###,###,###");
+//        double insertPrice2 = Double.parseDouble(insertPrice.getText().toString());
+//        String ch = dc.format(insertPrice2);
+//        insertPrice.setText(ch);
+
+        final DecimalFormat df = new DecimalFormat("###,###");
+        final String[] result = {""};
+
+        insertPrice.addTextChangedListener(new TextWatcher(){
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(!s.toString().equals(result[0])){     // StackOverflow를 막기위해,
+                    result[0] = df.format(Long.parseLong(s.toString().replaceAll(",", "")));   // 에딧텍스트의 값을 변환하여, result에 저장.
+                    insertPrice.setText(result[0]);    // 결과 텍스트 셋팅.
+                    insertPrice.setSelection(result[0].length());     // 커서를 제일 끝으로 보냄.
+                }
+            }
+        });
+
+        출처: https://caliou.tistory.com/73 [미녀개발자님의 블로그]
+
         ButtonRegister22.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
@@ -121,6 +152,7 @@ public class RegisterMenu extends AppCompatActivity {
         progressDoalog.show();
 
         menu_name = insertMenu.getText().toString();
+
         menu_price = insertPrice.getText().toString();
 
         for(int i =0; i<=mArrayList.size(); i++){

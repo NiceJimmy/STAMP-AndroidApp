@@ -71,7 +71,7 @@ public class Main2Activity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("SHARE BUYING");
+        setTitle("STAMP");
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -198,9 +198,11 @@ public class Main2Activity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+//        if (id == R.id.nav_camera) {
+//            // Handle the camera action
+//        }
+
+         if (id == R.id.nav_gallery) {
 
 //            com.kakao.kakaonavi.Location kakao = Destination.newBuilder("카카오 판교 오피스", 127.10821222694533, 37.40205604363057).build();
 //            KakaoNaviParams params = KakaoNaviParams.newBuilder(kakao)
@@ -216,15 +218,17 @@ public class Main2Activity extends AppCompatActivity
             startActivity(intent);
 
 
-        } else if (id == R.id.nav_slideshow) {
-//            Intent intent = new Intent(getApplicationContext(),MypageActivity.class);
+        }
+//        else if (id == R.id.nav_slideshow) {
+////            Intent intent = new Intent(getApplicationContext(),MypageActivity.class);
+////            startActivity(intent);
+////
+//            Intent intent = new Intent(getApplicationContext(),MapActivity.class);
 //            startActivity(intent);
 //
-            Intent intent = new Intent(getApplicationContext(),MapActivity.class);
-            startActivity(intent);
-
-
-        } else if (id == R.id.nav_manage) {
+//
+//        }
+        else if (id == R.id.nav_manage) {
 
             Intent intent = new Intent(getApplicationContext(),MyShopActivity.class);
             startActivity(intent);
@@ -234,9 +238,11 @@ public class Main2Activity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(),UploadActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_send) {
-
         }
+
+//        else if (id == R.id.nav_send) {
+//
+//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
