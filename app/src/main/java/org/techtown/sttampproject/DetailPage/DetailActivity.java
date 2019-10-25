@@ -260,7 +260,7 @@ public class DetailActivity extends AppCompatActivity {
                 //여기에 update_shop 작업을 시작한다.
 
                 SharingApiInterface apiInterface = SharingApiClient.getApiClient().create(SharingApiInterface.class);
-                Call<MyShopDataClass> call = apiInterface.update_shop_info(userID, userID2, proName, address, address2, shorder, stamp_num, stamp_use);
+                Call<MyShopDataClass> call = apiInterface.update_shop_info(userID, userID2, proName, About_shop, Tel_con, Tel_con2, address, address2, shorder, stamp_num, stamp_use);
                 APIHelper.enqueueWithRetry(call, 30, new Callback<MyShopDataClass>() {
                     @Override
                     public void onResponse(Call<MyShopDataClass> call, Response<MyShopDataClass> response) {
@@ -458,8 +458,8 @@ public class DetailActivity extends AppCompatActivity {
                 final ProgressDialog progressDoalog;
                 progressDoalog = new ProgressDialog(org.techtown.sttampproject.DetailPage.DetailActivity.this);
                 progressDoalog.setMax(100);
-                progressDoalog.setMessage("잠시 기다려줄려 ?....");
-                progressDoalog.setTitle("리뷰를 업로드 중인께");
+                progressDoalog.setMessage("잠시 기다려 주세요.");
+                progressDoalog.setTitle("리뷰를 업로드 중입니다.");
                 progressDoalog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                 progressDoalog.setCanceledOnTouchOutside(false);
                 // show it

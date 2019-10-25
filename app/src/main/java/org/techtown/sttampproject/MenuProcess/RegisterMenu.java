@@ -144,8 +144,8 @@ public class RegisterMenu extends AppCompatActivity {
         final ProgressDialog progressDoalog;
         progressDoalog = new ProgressDialog(RegisterMenu.this);
         progressDoalog.setMax(100);
-        progressDoalog.setMessage("잠시 기다려줄려 ?....");
-        progressDoalog.setTitle("메뉴를 업로드 중인께");
+        progressDoalog.setMessage("잠시 기다려 주세요.");
+        progressDoalog.setTitle("메뉴를 업로드 중입니다.");
         progressDoalog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDoalog.setCanceledOnTouchOutside(false);
         // show it

@@ -131,7 +131,7 @@ public interface SharingApiInterface {
 
     @FormUrlEncoded
     @POST("update_stamp_info.php")
-    Call<MyShopDataClass> update_shop_info(@Field("userID") String user_id, @Field("userID2") String user_id2, @Field("proName") String proName, @Field("address") String address, @Field("address2") String address2, @Field("shorder") String shorder, @Field("stamp_num") String stamp_num, @Field("stamp_use") String stamp_use);
+    Call<MyShopDataClass> update_shop_info(@Field("userID") String user_id, @Field("userID2") String user_id2, @Field("proName") String proName, @Field("about_shop") String about_shop, @Field("store_tel1") String store_tel1, @Field("store_tel2") String store_tel2, @Field("address") String address, @Field("address2") String address2, @Field("shorder") String shorder, @Field("stamp_num") String stamp_num, @Field("stamp_use") String stamp_use);
 
 
     @GET("get_MyShop_info.php")

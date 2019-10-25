@@ -282,8 +282,8 @@ String shorder;
         final ProgressDialog progressDoalog;
         progressDoalog = new ProgressDialog(SharingPictures2.this);
         progressDoalog.setMax(100);
-        progressDoalog.setMessage("잠시 기다려줄려 ?....");
-        progressDoalog.setTitle("사진을 업로드 중인께");
+        progressDoalog.setMessage("잠시 기다려주세요.");
+        progressDoalog.setTitle("사진을 업로드 중입니다.");
         progressDoalog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDoalog.setCanceledOnTouchOutside(false);
         // show it
@@ -368,8 +368,19 @@ for(int i =0; i<=mArrayList.size(); i++){
 
                 mArrayList2 = response.body();
 
+                for(int s=0; s<mArrayList.size(); s++){
+                    Log.d("test35","테스트 : " + mArrayList.get(s).getPosit());
+                }
+
+//                for(int s=0; s<mArrayList2.size(); s++){
+//                    Log.d("test35","테스트 : " + mArrayList2.get(s).getPicorder2());
+//                }
+
                 Log.d("test33","테스트"+user_id+shorder);
              for(int i=0; i<mArrayList.size(); i++){
+
+
+
 
                  apiInterface2.update_pic_count(user_id,shorder,mArrayList.get(i).getPosit(),mArrayList2.get(i).getPicorder2()).enqueue(new Callback<ImageClass2>() {
                      @Override

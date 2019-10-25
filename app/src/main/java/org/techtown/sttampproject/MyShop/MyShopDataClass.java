@@ -13,6 +13,15 @@ public class MyShopDataClass {
     @SerializedName("proName")
     private String proName;
 
+    @SerializedName("about_shop")
+    private String about_shop;
+
+    @SerializedName("store_tel1")
+    private String store_tel1;
+
+    @SerializedName("store_tel2")
+    private String store_tel2;
+
     @SerializedName("address")
     private String address;
 
@@ -34,10 +43,14 @@ public class MyShopDataClass {
     @SerializedName("response")
     private String Response;
 
-    public MyShopDataClass(String user_id, String user_id2, String proName, String address, String address2, String shorder, String path, String stamp_num, String stamp_use, String response) {
+
+    public MyShopDataClass(String user_id, String user_id2, String proName, String about_shop, String store_tel1, String store_tel2, String address, String address2, String shorder, String path, String stamp_num, String stamp_use, String response) {
         this.user_id = user_id;
         this.user_id2 = user_id2;
         this.proName = proName;
+        this.about_shop = about_shop;
+        this.store_tel1 = store_tel1;
+        this.store_tel2 = store_tel2;
         this.address = address;
         this.address2 = address2;
         this.shorder = shorder;
@@ -69,6 +82,30 @@ public class MyShopDataClass {
 
     public void setProName(String proName) {
         this.proName = proName;
+    }
+
+    public String getAbout_shop() {
+        return about_shop;
+    }
+
+    public void setAbout_shop(String about_shop) {
+        this.about_shop = about_shop;
+    }
+
+    public String getStore_tel1() {
+        return store_tel1;
+    }
+
+    public void setStore_tel1(String store_tel1) {
+        this.store_tel1 = store_tel1;
+    }
+
+    public String getStore_tel2() {
+        return store_tel2;
+    }
+
+    public void setStore_tel2(String store_tel2) {
+        this.store_tel2 = store_tel2;
     }
 
     public String getAddress() {

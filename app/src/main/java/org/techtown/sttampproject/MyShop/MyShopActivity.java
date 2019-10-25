@@ -22,6 +22,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
+// 필터링 기능을 응용하여 향후 게시물 검색기능을 구현할 예정
+
 public class MyShopActivity extends AppCompatActivity {
 
     private List<MyShopDataClass> mArrayList;

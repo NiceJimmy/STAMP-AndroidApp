@@ -54,6 +54,9 @@ private Context context;
                     String shorder = mList.get(position).getShorder();
                     String userid = mList.get(position).getUser_id();
                     String proName = mList.get(position).getProName();
+                    String about_shop = mList.get(position).getAbout_shop();
+                    String Tel_con = mList.get(position).getStore_tel1();
+                    String Tel_con2 = mList.get(position).getStore_tel2();
                     String address = mList.get(position).getAddress();
                     String address2 = mList.get(position).getAddress2();
 
@@ -65,6 +68,9 @@ private Context context;
                     intent.putExtra("proName",proName);
                     intent.putExtra("address",address);
                     intent.putExtra("address2",address2);
+                    intent.putExtra("about_shop",about_shop);
+                    intent.putExtra("tel_con",Tel_con);
+                    intent.putExtra("tel_con2",Tel_con2);
 
 
                     view.getContext().startActivity(intent);

@@ -1,6 +1,7 @@
 package org.techtown.sttampproject.RegisterProcess;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -35,6 +36,8 @@ import org.techtown.sttampproject.LoginActivity;
 import org.techtown.sttampproject.R;
 import org.techtown.sttampproject.ShareActivity.RetrofitService3.SharingApiClient;
 import org.techtown.sttampproject.ShareActivity.RetrofitService3.SharingApiInterface;
+import org.techtown.sttampproject.ShareActivity.ShareActivity2;
+import org.techtown.sttampproject.SharingGridView2.SharingPictures2;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -63,6 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
       imageView = (ImageView) findViewById(R.id.imageView2);
         final EditText idText = (EditText)findViewById(R.id.ID);
         final EditText passwordText = (EditText)findViewById(R.id.PW);
+        final EditText passwordText2 = (EditText)findViewById(R.id.PW2);
         final EditText emailText = (EditText)findViewById(R.id.Email);
 
 
@@ -107,7 +111,7 @@ button2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onResponse(String response) { //Request 요청 후 답장이 온 데이터는 onResponse 함수의 인자값인 response에 저장된다..
                         try{
-                            Toast.makeText(RegisterActivity.this, response, Toast.LENGTH_LONG).show();
+//                            Toast.makeText(RegisterActivity.this, response, Toast.LENGTH_LONG).show();
 
                             //request 해서 돌아온 json형태의 response값에 대한 응답처리 과정이다?
 
@@ -118,17 +122,17 @@ button2.setOnClickListener(new View.OnClickListener() {
 
                             if(success){//사용할 수 있는 아이디라면
                                 AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                                dialog = builder.setMessage("you can use ID")
+                                dialog = builder.setMessage("사용할 수 있는 아이디입니다.")
                                         .setPositiveButton("OK", null)
                                         .create();
                                 dialog.show();
                                 idText.setEnabled(false);//아이디값을 바꿀 수 없도록 함
                                 validate = true;//검증완료
-                                idText.setBackgroundColor(getResources().getColor(R.color.colorGray));
-                                validateButton.setBackgroundColor(getResources().getColor(R.color.colorGray));
+//                                idText.setBackgroundColor(getResources().getColor(R.color.colorGray));
+//                                validateButton.setBackgroundColor(getResources().getColor(R.color.colorGray));
                             }else{//사용할 수 없는 아이디라면
                                 AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                                dialog = builder.setMessage("alreay used ID")
+                                dialog = builder.setMessage("이미 사용중인 아이디입니다.")
                                         .setNegativeButton("OK", null)
                                         .create();
                                 dialog.show();
@@ -166,13 +170,14 @@ button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 final String userID = idText.getText().toString();
                 String userPassword = passwordText.getText().toString();
+                String userPassword2 = passwordText2.getText().toString();
 
                 String userEmail = emailText.getText().toString();
 
                 //ID 중복체크를 했는지 확인함
                 if(!validate){
                     AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                    dialog = builder.setMessage("First Check ID plz")
+                    dialog = builder.setMessage("아이디 중복을 확인해주세요.")
                             .setNegativeButton("OK", null)
                             .create();
                     dialog.show();
@@ -182,51 +187,41 @@ button2.setOnClickListener(new View.OnClickListener() {
                 //한칸이라도 빠뜨렸을 경우
 
 
-                //회원가입 시작
-//                Response.Listener<String> responseListener = new Response.Listener<String>(){
-//
-//                    @Override
-//                    public void onResponse(String response) {
-//                        try{
-//                            JSONObject jsonResponse = new JSONObject(response);
-//                            boolean success = jsonResponse.getBoolean("success");
-//                            if(success){//사용할 수 있는 아이디라면
-//                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-//                                dialog = builder.setMessage("Register Your ID")
-//                                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                                            @Override
-//                                            public void onClick(DialogInterface dialog, int which) {
-//                                                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-//                                                intent.putExtra("ID",userID);
-//                                                Log.d("intent22","넘기는 아이디값"+userID);
-//                                                startActivity(intent);
-//                                            }
-//                                        })
-//                                        .create();
-//                                dialog.show();
-//
-//
-//                            }else{//사용할 수 없는 아이디라면
-//                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-//                                dialog = builder.setMessage("Register fail")
-//                                        .setNegativeButton("OK", null)
-//                                        .create();
-//                                dialog.show();
-//                            }
-//
-//                        }
-//                        catch(Exception e){
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                };//Response.Listener 완료
+                if(userID.equals("")||userPassword.equals("")||userPassword2.equals("")||userEmail.equals("")){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                    dialog = builder.setMessage("회원정보를 빠짐없이 입력해주세요.")
+                            .setNegativeButton("OK", null)
+                            .create();
+                    dialog.show();
+                    return;
+                }
 
-//                //Volley 라이브러리를 이용해서 실제 서버와 통신을 구현하는 부분
-//                RegisterRequest registerRequest = new RegisterRequest(userID, userPassword, userGender, userEmail, responseListener);
-//                RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
-//                queue.add(registerRequest);
+
+                if(!userPassword.equals(userPassword2)){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                    dialog = builder.setMessage("비밀번호가 일치하지 않습니다.")
+                            .setNegativeButton("OK", null)
+                            .create();
+                    dialog.show();
+                    return;
+
+                }
+
+
+
 
             profileimg = convertToString();
+
+
+                final ProgressDialog progressDoalog;
+                progressDoalog = new ProgressDialog(RegisterActivity.this);
+                progressDoalog.setMax(100);
+                progressDoalog.setMessage("잠시 기다려주세요..");
+                progressDoalog.setTitle("데이터를 업로드 중입니다.");
+                progressDoalog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDoalog.setCanceledOnTouchOutside(false);
+                // show it
+                progressDoalog.show();
 
                 SharingApiInterface apiInterface2 = SharingApiClient.getApiClient().create(SharingApiInterface.class);
                 Call<RegisterDataClass> call2 = apiInterface2.RegisterProcess(userID,userPassword,userEmail,profileimg);
@@ -234,22 +229,35 @@ button2.setOnClickListener(new View.OnClickListener() {
                    @Override
                    public void onResponse(Call<RegisterDataClass> call, retrofit2.Response<RegisterDataClass> response) {
                        RegisterDataClass sdc = response.body();
-                       Log.d("Server Response3",""+sdc.getResponse());
-                       AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                       dialog = builder.setMessage("Register Your ID")
-                               .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                   @Override
-                                   public void onClick(DialogInterface dialog, int which) {
-                                       Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+
+                       if(sdc.getResponse().equals("Register Successfully....")){
+                           progressDoalog.dismiss();
+
+
+                           Log.d("Server Response3",""+sdc.getResponse());
+                           AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                           dialog = builder.setMessage("회원가입 성공!")
+                                   .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                       @Override
+                                       public void onClick(DialogInterface dialog, int which) {
+                                           Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
 //                                       intent.putExtra("ID",userID);
 //                                       Log.d("intent22","넘기는 아이디값"+userID);
-                                       startActivity(intent);
-                                   }
-                               })
-                               .create();
-                       dialog.show();
+                                           startActivity(intent);
+                                       }
+                                   })
+                                   .create();
+                           dialog.show();
 
+
+                       }else {
+
+                           progressDoalog.dismiss();
+                           Toast.makeText(RegisterActivity.this, "회원가입 실패", Toast.LENGTH_LONG).show();
+                       }
                    }
+
+
 
                    @Override
                    public void onFailure(Call<RegisterDataClass> call, Throwable t) {
