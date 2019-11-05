@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="NEXT"
+            android:text="완료하기"
             android:background="@color/colorAccent"
             android:textColor="@color/cast_libraries_material_featurehighlight_text_header_color"
             android:layout_marginLeft="1dp"

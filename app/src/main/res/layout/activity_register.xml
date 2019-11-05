@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:ems="10"
-            android:hint="ID"
+            android:hint="ID(반드시 영문으로 입력)"
             android:textColorHint="@color/colorAccent"
             android:inputType="textPersonName" />
 

@@ -14,12 +14,12 @@
 
 
     <LinearLayout
+        android:id="@+id/lay2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
         android:layout_weight="1"
         android:gravity="bottom"
-        >
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageView7"
@@ -31,6 +31,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

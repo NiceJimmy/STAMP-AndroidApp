@@ -2,9 +2,12 @@ package org.techtown.sttampproject.RegisterProcess;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -69,8 +72,9 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText passwordText2 = (EditText)findViewById(R.id.PW2);
         final EditText emailText = (EditText)findViewById(R.id.Email);
 
-
-
+        Resources resources = getApplicationContext().getResources();
+       uri =  Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getResources().getResourcePackageName(R.drawable.profile)
+               + '/' + getResources().getResourceTypeName(R.drawable.profile) + '/' + getResources().getResourceEntryName(R.drawable.profile) );
 
 
 Button button2 = (Button) findViewById(R.id.button2);
@@ -96,6 +100,14 @@ button2.setOnClickListener(new View.OnClickListener() {
                 if(userID.equals("")){
                     AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                     dialog = builder.setMessage("ID is empty")
+                            .setPositiveButton("OK", null)
+                            .create();
+                    dialog.show();
+                    return;
+                }
+                if(userID.matches(".*[ㄱ-ㅎㅏ-ㅣ가-힣]+.*")){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                    dialog = builder.setMessage("ID는 반드시 영문으로 입력해주세요.")
                             .setPositiveButton("OK", null)
                             .create();
                     dialog.show();
@@ -210,7 +222,9 @@ button2.setOnClickListener(new View.OnClickListener() {
 
 
 
+
             profileimg = convertToString();
+
 
 
                 final ProgressDialog progressDoalog;
@@ -316,6 +330,8 @@ button2.setOnClickListener(new View.OnClickListener() {
             switch (requestCode) {
                 case GALLERY_REQUEST_CODE:
 
+
+
                  uri = data.getData();
                     Glide.with(RegisterActivity.this)
                             .load(uri)
@@ -333,7 +349,13 @@ button2.setOnClickListener(new View.OnClickListener() {
     private void UriToBitmap(){
 
         try {
-            bm =  MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+
+
+
+
+
+                bm = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
